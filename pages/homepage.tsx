@@ -5,10 +5,9 @@ import {motion} from 'framer-motion'
 import BlogCard from './components/Card/BlogCard'
 import CommentModal from './components/Common/CommentModal'
 import { ToogleCommentModalPro } from './components/Types'
+import Footer from './components/Footer/Footer'
 
 type Props = {}
-
-
 
 const Homepage = (props: Props) => {
   const [toogleCommentModal, setToogleCommentModal] = useState<ToogleCommentModalPro>({
@@ -18,9 +17,9 @@ const Homepage = (props: Props) => {
 
   return (
     <>
-    <div className='bg-gradient-to-b from-BackgroundColor to-gray-700 min-h-screen w-full px-2'>
+    <div className='bg-gradient-to-b from-BackgroundColor to-gray-700 min-h-screen w-full'>
       <Navbar />
-      <motion.div className='container mx-auto mt-7 px-4 md:px-10 h-auto' initial={{opacity: 0}} whileInView={{opacity: 10, y: -10}} exit={{opacity: 0}} transition={{duration : 2}}>
+      <motion.div className='container mx-auto mt-7 px-4 md:px-10 h-auto' initial={{opacity: 0, x:-100}} whileInView={{opacity: 10, x: 0}} exit={{opacity: 0}} transition={{duration : 0.5}}>
         <h1 className='text-center my-8 font-semibold text-3xl text-gray-300'>TRENDING BLOG</h1>
         <Carousel />
       </motion.div>
@@ -41,8 +40,10 @@ const Homepage = (props: Props) => {
         <BlogCard setToogleCommentModal={setToogleCommentModal} />
         <BlogCard setToogleCommentModal={setToogleCommentModal} />
         <BlogCard setToogleCommentModal={setToogleCommentModal} />
+        
 
       </div>
+      <Footer />
     </div>
     </>
   )

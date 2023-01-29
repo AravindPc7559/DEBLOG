@@ -23,7 +23,7 @@ const BlogCard = ({setToogleCommentModal}: Props) => {
     }, [setToogleCommentModal])
     
   return (
-    <motion.div initial={{opacity: 0}} whileInView={{opacity:10, x:-20}} whileHover={{scale: 1.1}} transition={{duration: 0.4}} className='w-full min-h-[400px] max-h-[800px] bg-transparent shadow-2xl p-3 overflow-auto py-4 cursor-pointer'>
+    <motion.div initial={{opacity: 0, y:-100}} whileInView={{opacity:10, y:0}} whileHover={{scale: 1.1}} transition={{duration: 0.4}} className='w-full min-h-[400px] max-h-[800px] bg-transparent shadow-2xl p-3 overflow-auto py-4 cursor-pointer'>
         <div className='w-full max-h-[200px] rounded-lg'>
             <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014__340.jpg" className='object-cover h-full w-full rounded-lg' alt="" />
         </div>
